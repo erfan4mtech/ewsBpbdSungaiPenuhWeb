@@ -1,0 +1,143 @@
+:root {
+  --bgUtama: 45deg, #d5e0ed, #f69505;
+  --bgLogin: 45deg, #0504f4, #f69505;
+  --bgCard: linear-gradient(
+    135deg,
+    rgba(156, 160, 158, 0.9),
+    rgba(255, 200, 100, 0.5)
+  );
+
+  --max-width: 1300px;
+  --gap: 16px;
+}
+
+body {
+  height: 100vh;
+  /* display: flex; */
+  background: linear-gradient(var(--bgUtama));
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+.header {
+  display: flex;
+  background: linear-gradient(var(--bgLogin));
+  text-align: left;
+  padding: 10px;
+  padding-left: 20px;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* efek bayangan bawah */
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.header #logo {
+  width: 60px;
+  height: auto;
+}
+h1 {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 10px;
+  font-family: Arial;
+
+  font-weight: bold;
+}
+
+/* Container Utama */
+.container{
+  width: 100%;
+  /* max-width:var(--max-width); */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+
+/* Card Umum */
+.card{
+  background: var(--bgCard);
+  margin-top: 20px;
+}
+
+.chart-card{
+  padding: 10px;
+  padding-left: 20px;
+  color: rgb(24, 2, 71);
+  font-size: 10px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* efek bayangan bawah */
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+
+}
+.data-card{
+  padding: 10px;
+  padding-left: 20px;
+  color: rgb(24, 2, 71);
+  font-size: 10px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* efek bayangan bawah */
+  border-bottom-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+/* Chart */
+.chart-wrap {
+  width: 100%;
+  height: 480px;
+}
+.chart-wrap canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+
+
+
+
+
+/* Kontrol */
+.controls {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+} */
+/* .controls select, .controls button {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  background: white;
+}
+
+
+/* Table */
+.table-wrap { overflow: auto; margin-top: 12px; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+thead th {
+  text-align: left;
+  padding: 10px;
+  background: #f1f5f9;
+  border-bottom: 1px solid #e6eef8;
+}
+tbody td {
+  padding: 10px;
+  border-bottom: 1px solid #f0f4f8;
+}
+
+/* Footer */
+.site-footer {
+  width: 100%;
+  max-width: var(--max-width);
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+}

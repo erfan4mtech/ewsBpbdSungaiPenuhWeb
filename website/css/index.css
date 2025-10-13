@@ -1,0 +1,78 @@
+ :root {
+        --bgUtama: 45deg, #d5e0ed, #f69505;
+        --bgLogin: 45deg, #0504f4, #f69505;
+      }
+
+      body {
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        flex-direction: column; /* ⬅️ elemen disusun vertikal (atas ke bawah) */
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(var(--bgUtama));
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        background: linear-gradient(var(--bgLogin));
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        width: 320px;
+        color: #fff;
+      }
+
+      .container h1 {
+        font-size: 18px;
+        margin-bottom: 20px;
+      }
+
+      .container input {
+        width: 90%;
+        padding: 10px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 8px;
+      }
+
+      .container button {
+        width: 100%;
+        padding: 10px;
+        background-color: #0504f4;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .container button:hover {
+        background-color: #fe9903;
+        color: #002248;
+        scale: 1.2;
+      }
+      .container button:active{
+        background-color: #002248;
+        color: whitesmoke;
+        scale: 0.8;
+      }
+
+      .container #btn-login {
+        margin-top: 30px;
+        width: 30%;
+      }
+
+      #footer {
+        margin-top: 15px;
+        font-size: 12px;
+      }
+
+      #logo {
+        display: block;
+        margin: 20px auto 20px; /* Tengah horizontal dan jarak ke atas */
+        width: 100px; /* Ukuran logo bisa diubah sesuai kebutuhan */
+        opacity: 0.95; /* Sedikit transparan agar lembut */
+      }

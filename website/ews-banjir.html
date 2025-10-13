@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EWS Banjir</title>
+    <link rel="stylesheet" href="css/ews-banjir.css" />
+
+    <!-- chart.js CDN -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"
+      defer
+    ></script>
+
+    <!-- Script untuk keluarkan grafik dari database -->
+    <script src="script/script-grafik.js" defer></script>
+  </head>
+  <body>
+    <div class="header">
+      <img id="logo" src="gambar/logobpbd.png" alt="gambar logo" />
+      <h1>Pantau Kondisi Aliran Sungai Batang Merao</h1>
+    </div>
+
+    <main class="container">
+      <!-- GRAFIK  -->
+      <section class="card chart-card">
+        <h2>GRAFIK WAKTU VS KETINGGIAN AIR TERKINI</h2>
+
+        <div class="controls">
+          <label>
+            Perbaharui Setiap
+            <select id="refreshInterval">
+              <option value="0">Jangan auto-refresh</option>
+              option>
+              <option value="5000">5 Detik</option>
+              option>
+              <option value="20000">20 Detik</option>
+              option>
+              <option value="60000">1 Menit</option>
+              option>
+              <option value="300000">5 Menit</option>
+              option>
+              <option value="600000">10 Menit</option>
+              option>
+              <option value="3600000">1 jam</option>
+              option>
+            </select>
+          </label>
+          <button id="btnRefresh">Refresh Sekarang</button>
+        </div>
+        <div class="chart-wrap">
+          <canvas
+            id="chartTinggiAir"
+            aria-label="Grafik Tinggi Air"
+            role="img"
+          ></canvas>
+        </div>
+      </section>
+
+      <!-- DATA DARI DATABASE -->
+      <section class="card data-card">
+        <h2>Data Terekam Dari Sensor Ketinggian Permukaan Air</h2>
+        <div class="table-wrap">
+          <table id="dataTable">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Tinggi Air</th>
+                <th>Lokasi EWS</th>
+                <th>Waktu</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Isi via JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <footer>
+  <p>&copy; <span id="tahun"></span> BPBD Kota Sungai Penuh</p>
+</footer>
+
+    </main>
+  </body>
+</html>
