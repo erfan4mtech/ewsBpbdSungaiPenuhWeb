@@ -14,16 +14,18 @@
 
     <!-- Script untuk keluarkan grafik dari database -->
     <script src="script/script-grafik.js" defer></script>
+   
   </head>
   <body>
     <div class="header">
       <img id="logo" src="gambar/logobpbd.png" alt="gambar logo" />
-      <h1>Pantau Kondisi Aliran Sungai Batang Merao</h1>
+      <h1>Pantau Kondisi Aliran Sungai Batang Merao 1</h1>
     </div>
 
     <main class="container">
       <!-- GRAFIK  -->
       <section class="card chart-card">
+        <h2>Selamat Datang<span id="welcom"></span></h2>
         <h2>GRAFIK WAKTU VS KETINGGIAN AIR TERKINI</h2>
 
         <div class="controls">
@@ -47,6 +49,13 @@
             </select>
           </label>
           <button id="btnRefresh">Refresh Sekarang</button>
+          
+        </div>
+        <div class="tinggiAirTerkini">
+          <p>
+            Ketinggian Air Saat Ini : <span id="ketinggian-air"></span>
+          </p>
+          <p>Status Ketinggian Air : <span id="status-tinggi-air"></span></p>
         </div>
         <div class="chart-wrap">
           <canvas
@@ -78,9 +87,27 @@
       </section>
 
       <footer>
-  <p>&copy; <span id="tahun"></span> BPBD Kota Sungai Penuh</p>
-</footer>
+        <p>
+          &copy; <span id="tahun"></span>Persembahan dari PT. Solusi Digital
+          Andalas untuk BPBD Kota Sungai Penuh
+        </p>
 
+        <blockquote>
+          "Bersama Menjaga Keselamatan dan Kesiapsiagaan Masyarakat"
+        </blockquote>
+      </footer>
     </main>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const tahun = document.getElementById("tahun");
+        tahun.textContent = new Date().getFullYear();
+
+        const welcomEl = document.getElementById("welcom");
+        const namaLengkap = localStorage.getItem("nama_lengkap") || "Pengguna";
+        welcomEl.textContent = `, ${namaLengkap}`;
+      });
+    </script>
+     <script src="script/script-tinggi-air-terakhir.js"></script>
   </body>
 </html>
