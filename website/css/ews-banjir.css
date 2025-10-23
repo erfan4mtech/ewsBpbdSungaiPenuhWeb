@@ -56,14 +56,14 @@ h1 {
 }
 
 .tinggiAirTerkini {
-  margin-top:20px;
+  margin-top: 20px;
   display: inline-block; /* ✅ mengikuti ukuran isi (paragraf) */
   background-color: white;
   padding: 8px 16px;
   border-radius: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
-.tinggiAirTerkini p{
+.tinggiAirTerkini p {
   font-size: 20px;
   font-weight: bold;
   color: #0504f4;
@@ -155,13 +155,47 @@ tbody td {
   font-size: 13px;
 }
 
-
 @keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .blink {
   animation: blink 1s infinite; /* Berkedip tiap 1 detik */
+}
+
+/* untuk btn-perkiraan cuaca */
+
+#btn-prakiraancuaca {
+  margin-top: 10px;
+  display: inline-block;
+  background-color: #2196f3;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+}
+#btn-prakiraancuaca:hover {
+  background: linear-gradient(45deg, #0056b3, #0099cc);
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+#btn-prakiraancuaca:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+@media (max-width: 600px) {
+  #btn-prakiraancuaca {
+    width: 100%;
+    font-size: 15px;
+  }
 }

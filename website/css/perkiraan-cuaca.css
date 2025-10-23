@@ -1,0 +1,76 @@
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #0066cc;
+}
+
+.lokasi {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.cuaca-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: #f9fafc;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 60px;
+  height: 60px;
+}
+
+.time {
+  font-weight: bold;
+  color: #444;
+}
+
+.desc {
+  color: #555;
+  margin: 4px 0;
+}
+
+.temp {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0077cc;
+}
+
+.hu {
+  font-size: 13px;
+  color: #666;
+}

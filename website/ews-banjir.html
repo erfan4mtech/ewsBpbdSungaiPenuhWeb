@@ -14,7 +14,6 @@
 
     <!-- Script untuk keluarkan grafik dari database -->
     <script src="script/script-grafik.js" defer></script>
-   
   </head>
   <body>
     <div class="header">
@@ -49,14 +48,18 @@
             </select>
           </label>
           <button id="btnRefresh">Refresh Sekarang</button>
-          
         </div>
         <div class="tinggiAirTerkini">
-          <p>
-            Ketinggian Air Saat Ini : <span id="ketinggian-air"></span>
-          </p>
+          <p>Ketinggian Air Saat Ini : <span id="ketinggian-air"></span></p>
           <p>Status Ketinggian Air : <span id="status-tinggi-air"></span></p>
+          <button
+            id="btn-prakiraancuaca"
+            onclick="window.location.href='perkiraan-cuaca.html'"
+          >
+            LIHAT PRAKIRAAN CUACA
+          </button>
         </div>
+
         <div class="chart-wrap">
           <canvas
             id="chartTinggiAir"
@@ -108,6 +111,6 @@
         welcomEl.textContent = `, ${namaLengkap}`;
       });
     </script>
-     <script src="script/script-tinggi-air-terakhir.js"></script>
+    <script src="script/script-tinggi-air-terakhir.js"></script>
   </body>
 </html>
