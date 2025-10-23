@@ -1,6 +1,18 @@
+:root {
+  --bgUtama: 45deg, #d5e0ed, #f69505;
+  --bgLogin: 45deg, #0504f4, #f69505;
+  --bgCard: linear-gradient(
+    135deg,
+    rgba(156, 160, 158, 0.9),
+    rgba(255, 200, 100, 0.5)
+  );
+
+  --max-width: 1300px;
+  --gap: 16px;
+
 body {
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  background: linear-gradient(var(--bgUtama));
   color: #333;
   display: flex;
   justify-content: center;
