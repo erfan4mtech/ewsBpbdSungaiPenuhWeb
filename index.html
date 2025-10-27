@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Live Getaran Tanah (Dummy)</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      body {
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+      canvas {
+        width: 90%;
+        max-width: 900px;
+        height: 400px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Live Getaran Tanah (Simulasi Dummy Data)</h2>
+    <canvas id="waveChart"></canvas>
+
+    <script>
+      const ctx = document.getElementById("waveChart").getContext("2d");
+
+      const chart = new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: [],
+          datasets: [
+            {
+              label: "Getaran",
+              borderColor: "yellow",
+              backgroundColor: "rgba(255, 0, 0, 0.5)",
+              data: [],
+              pointRadius: 0,
+              borderWidth: 2,
+              fill: true,
+              tension: 0.3,
+            },
+          ],
+        },
+        options: {
+          animation: false,
+          scales: {
+            x: { display: false },
+            y: {
+              min: -10,
+              max: 10,
+              ticks: { color: "#fff" },
+              grid: { color: "rgba(255,255,255,0.2)" },
+            },
+          },
+          plugins: { legend: { display: false } },
+        },
+      });
+
+      // Fungsi pembuat data dummy bergelombang
+      function generateWave() {
+        const freq = 0.1 + Math.random() * 0.1; // frekuensi acak
+        const amp = 5 + Math.random() * 3; // amplitudo acak
+        const noise = (Math.random() - 0.5) * 2; // sedikit gangguan
+        const t = Date.now() / 1000;
+        return Math.sin(t * freq * 10) * amp + noise;
+      }
+
+      // Update data tiap 100 ms (lebih halus dari per detik)
+      setInterval(() => {
+        const amplitude = generateWave();
+        const label = new Date().toLocaleTimeString();
+
+        chart.data.labels.push(label);
+        chart.data.datasets[0].data.push(amplitude);
+
+        if (chart.data.labels.length > 200) {
+          chart.data.labels.shift();
+          chart.data.datasets[0].data.shift();
+        }
+
+        chart.update();
+      }, 100);
+    </script>
+  </body>
+</html>
